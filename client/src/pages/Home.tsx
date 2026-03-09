@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ArrowLeft, BookOpen, ChevronLeft } from "lucide-react";
 import { usePrograms } from "@/hooks/use-programs";
 
@@ -81,6 +81,83 @@ export default function Home() {
                 <div className="text-3xl font-black text-secondary mb-1">+1000</div>
                 <div className="text-foreground font-bold">طالب وطالبة</div>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-24 bg-gradient-to-b from-secondary/10 to-primary/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* About Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1543269865-cbdf26ce6c3f?w=600&q=80" 
+                  alt="عن مقرأة الهدى والنور" 
+                  className="w-full h-auto"
+                />
+              </div>
+            </motion.div>
+
+            {/* About Text */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6 text-right"
+            >
+              <div>
+                <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
+                  عن <span className="text-primary">مقرأة الهدى والنور</span>
+                </h2>
+              </div>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                مقرأة الهدى والنور هي مؤسسة تعليمية متخصصة في تعليم القرآن الكريم وتحفيظه بكل احترافية واهتمام.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">✓</div>
+                  <div>
+                    <h3 className="font-bold text-foreground text-lg mb-1">برامج متخصصة</h3>
+                    <p className="text-muted-foreground">نقدم برامج متكاملة تناسب جميع الأعمار والمستويات</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold">✓</div>
+                  <div>
+                    <h3 className="font-bold text-foreground text-lg mb-1">معلمون متدربون</h3>
+                    <p className="text-muted-foreground">كادر تعليمي متميز وذو خبرة عالية في تدريس القرآن</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">✓</div>
+                  <div>
+                    <h3 className="font-bold text-foreground text-lg mb-1">مناهج حديثة</h3>
+                    <p className="text-muted-foreground">استخدام أحدث الطرق والمناهج التعليمية المثبتة</p>
+                  </div>
+                </div>
+              </div>
+
+              <a 
+                href="#programs"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg"
+              >
+                استكشف البرامج
+                <ChevronLeft className="w-5 h-5" />
+              </a>
             </motion.div>
           </div>
         </div>
