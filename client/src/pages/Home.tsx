@@ -66,10 +66,10 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="relative hidden lg:block"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 aspect-square border-8 border-white">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 aspect-square border-8 border-white dark:border-card">
                 {/* Landing page hero open Quran */}
                 <img 
-                  src="https://images.unsplash.com/photo-1601142634808-38923eb7c560?w=1200&q=80" 
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80" 
                   alt="Quran" 
                   className="w-full h-full object-cover"
                 />
@@ -121,12 +121,12 @@ export default function Home() {
                 <motion.div key={program.id} variants={item}>
                   <Link 
                     href={`/program/${program.id}`}
-                    className="block group h-full bg-card rounded-3xl overflow-hidden shadow-lg shadow-black/5 border border-border/50 hover:shadow-2xl hover:border-primary/30 hover:-translate-y-2 transition-all duration-500"
+                    className="block group h-full bg-card rounded-3xl overflow-hidden shadow-lg shadow-black/5 dark:shadow-black/20 border border-border/50 hover:shadow-2xl hover:border-primary/30 hover:-translate-y-2 transition-all duration-500"
                   >
-                    <div className="relative h-56 overflow-hidden">
-                      {/* Program thumbnail Islamic architecture/education */}
+                    <div className="relative h-56 overflow-hidden bg-muted">
+                      {/* Program thumbnail Islamic education */}
                       <img 
-                        src={program.imageUrl || "https://images.unsplash.com/photo-1590076215667-87ebff3b3e2b?w=800&q=80"} 
+                        src={program.imageUrl || "https://images.unsplash.com/photo-1609599006353-e629aaab31f5?w=800&q=80"} 
                         alt={program.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useRoute } from "wouter";
 import { motion } from "framer-motion";
 import { MessageCircle, CheckCircle2, AlertCircle, ChevronRight } from "lucide-react";
@@ -9,6 +10,10 @@ export default function ProgramDetails() {
   const programId = Number(params?.id);
   
   const { data: program, isLoading, isError } = useProgram(programId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [programId]);
 
   if (isLoading) {
     return (
@@ -90,6 +95,15 @@ export default function ProgramDetails() {
             <div className="whitespace-pre-wrap font-medium leading-loose bg-muted/30 p-6 md:p-8 rounded-2xl border border-border/50">
               {program.details}
             </div>
+          </div>
+
+          {/* Details Image */}
+          <div className="my-12">
+            <img 
+              src={imageSrc} 
+              alt={program.title}
+              className="w-full rounded-2xl shadow-lg shadow-black/10 object-cover max-h-96"
+            />
           </div>
 
           {/* CTA Button */}

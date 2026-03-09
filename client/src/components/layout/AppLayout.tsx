@@ -1,13 +1,15 @@
 import { ReactNode } from "react";
 import { Link } from "wouter";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Moon, Sun } from "lucide-react";
 import { FloatingWhatsApp } from "../FloatingWhatsApp";
 
 interface AppLayoutProps {
   children: ReactNode;
+  theme: "light" | "dark";
+  onToggleTheme: () => void;
 }
 
-export function AppLayout({ children }: AppLayoutProps) {
+export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col relative font-sans">
       {/* Header */}
@@ -18,8 +20,11 @@ export function AppLayout({ children }: AppLayoutProps) {
               <div className="bg-primary/10 p-2.5 rounded-xl group-hover:bg-primary/20 transition-colors">
                 <BookOpen className="w-7 h-7 text-primary" />
               </div>
-              <h1 className="text-2xl font-black text-gradient tracking-wide">
+              <h1 className="text-2xl font-black text-gradient tracking-wide hidden sm:block">
                 مقرأة الهدى والنور
+              </h1>
+              <h1 className="text-lg font-black text-gradient tracking-wide sm:hidden">
+                الهدى والنور
               </h1>
             </Link>
             
@@ -41,7 +46,31 @@ export function AppLayout({ children }: AppLayoutProps) {
               >
                 تواصل معنا
               </a>
+              <button 
+                onClick={onToggleTheme}
+                className="p-2.5 rounded-lg bg-muted text-foreground hover:bg-muted/80 transition-colors"
+                aria-label="تبديل المظهر"
+              >
+                {theme === "light" ? (
+                  <Moon className="w-5 h-5" />
+                ) : (
+                  <Sun className="w-5 h-5" />
+                )}
+              </button>
             </nav>
+
+            {/* Mobile theme toggle */}
+            <button 
+              onClick={onToggleTheme}
+              className="md:hidden p-2.5 rounded-lg bg-muted text-foreground hover:bg-muted/80 transition-colors"
+              aria-label="تبديل المظهر"
+            >
+              {theme === "light" ? (
+                <Moon className="w-5 h-5" />
+              ) : (
+                <Sun className="w-5 h-5" />
+              )}
+            </button>
           </div>
         </div>
       </header>
