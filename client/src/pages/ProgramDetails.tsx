@@ -46,80 +46,80 @@ export default function ProgramDetails() {
   const imageSrc = program.imageUrl || "https://images.unsplash.com/photo-1590076215667-87ebff3b3e2b?w=1600&q=80";
 
   return (
-    <div className="w-full bg-background pb-24">
+    <div className="w-full bg-background pb-16 sm:pb-24">
       {/* Program Hero Image */}
-      <div className="relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh]">
+      <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96">
         <img 
-          src={imageSrc} 
+          src={imageSrc || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 600'%3E%3Crect fill='%23ddd' width='1600' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='%23999' text-anchor='middle' dy='.3em'%3EProgram Hero Image%3C/text%3E%3C/svg%3E"} 
           alt={program.title} 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-black/40"></div>
         
         {/* Back Button */}
-        <div className="absolute top-8 right-4 sm:right-8 z-10">
+        <div className="absolute top-4 sm:top-6 lg:top-8 right-3 sm:right-4 lg:right-8 z-10">
           <Link 
             href="/"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-foreground font-bold hover:bg-white transition-colors"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full glass text-foreground font-bold hover:bg-white/50 transition-colors text-sm sm:text-base"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             عودة
           </Link>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 -mt-32 relative z-10">
+      <div className="w-full max-w-4xl mx-auto px-3 sm:px-4 md:px-6 -mt-20 sm:-mt-24 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-card rounded-[2.5rem] shadow-2xl shadow-black/10 border border-border p-8 md:p-12"
+          className="bg-card rounded-2xl sm:rounded-3xl shadow-2xl shadow-black/10 border border-border p-4 sm:p-8 md:p-12"
         >
           {/* Header */}
-          <div className="border-b border-border/60 pb-8 mb-8">
-            <h1 className="text-3xl md:text-5xl font-black text-foreground leading-[1.3] mb-6">
+          <div className="border-b border-border/60 pb-4 sm:pb-8 mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-tight mb-3 sm:mb-6">
               {program.title}
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium leading-relaxed">
               {program.description}
             </p>
           </div>
 
           {/* Details Content */}
-          <div className="prose prose-lg md:prose-xl prose-emerald rtl:prose-reverse max-w-none text-foreground/90">
-            <h3 className="text-2xl font-bold text-primary flex items-center gap-3 mb-6">
-              <CheckCircle2 className="w-7 h-7 text-secondary" />
+          <div className="max-w-none text-foreground/90 space-y-4 sm:space-y-6">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-secondary flex-shrink-0" />
               تفاصيل البرنامج
             </h3>
             
-            <div className="whitespace-pre-wrap font-medium leading-loose bg-muted/30 p-6 md:p-8 rounded-2xl border border-border/50">
+            <div className="whitespace-pre-wrap font-medium leading-loose bg-muted/30 p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-2xl border border-border/50 text-xs sm:text-sm md:text-base">
               {program.details}
             </div>
           </div>
 
           {/* Details Image */}
-          <div className="my-12">
+          <div className="my-8 sm:my-12">
             <img 
-              src={imageSrc} 
+              src={imageSrc || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23ddd' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='36' fill='%23999' text-anchor='middle' dy='.3em'%3EDetails Image%3C/text%3E%3C/svg%3E"}
               alt={program.title}
-              className="w-full rounded-2xl shadow-lg shadow-black/10 object-cover max-h-96"
+              className="w-full rounded-lg sm:rounded-2xl shadow-lg shadow-black/10 object-cover max-h-64 sm:max-h-80 md:max-h-96"
             />
           </div>
 
           {/* CTA Button */}
-          <div className="mt-12 flex flex-col sm:flex-row items-center gap-6 pt-8 border-t border-border/60">
+          <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-border/60">
             <div className="flex-1 text-center sm:text-right">
-              <h4 className="text-2xl font-bold text-foreground mb-2">هل ترغب في الانضمام؟</h4>
-              <p className="text-muted-foreground font-medium">تواصل معنا عبر الواتساب لإتمام عملية التسجيل.</p>
+              <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1 sm:mb-2">هل ترغب في الانضمام؟</h4>
+              <p className="text-xs sm:text-sm md:text-base text-muted-foreground font-medium">تواصل معنا عبر الواتساب لإتمام عملية التسجيل.</p>
             </div>
             
             <a 
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl font-black bg-gradient-to-l from-primary to-primary/80 text-primary-foreground shadow-xl shadow-primary/30 hover:shadow-2xl hover:scale-105 hover:-translate-y-1 active:scale-95 transition-all duration-300 text-xl"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-5 rounded-lg sm:rounded-2xl font-black bg-gradient-to-l from-primary to-primary/80 text-primary-foreground shadow-xl shadow-primary/30 hover:shadow-2xl hover:scale-105 hover:-translate-y-1 active:scale-95 transition-all duration-300 text-base sm:text-lg md:text-xl"
             >
-              <MessageCircle className="w-8 h-8" />
+              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
               اضغط للتسجيل
             </a>
           </div>
