@@ -1,37 +1,33 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { programs, type Program, type InsertProgram } from "@shared/schema";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  getPrograms(): Promise<Program[]>;
+  getProgram(id: number): Promise<Program | undefined>;
+  createProgram(program: InsertProgram): Promise<Program>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<string, User>;
+  private programs: Map<number, Program>;
+  private currentId: number;
 
   constructor() {
-    this.users = new Map();
+    this.programs = new Map();
+    this.currentId = 1;
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  async getPrograms(): Promise<Program[]> {
+    return Array.from(this.programs.values());
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+  async getProgram(id: number): Promise<Program | undefined> {
+    return this.programs.get(id);
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async createProgram(program: InsertProgram): Promise<Program> {
+    const id = this.currentId++;
+    const newProgram = { ...program, id };
+    this.programs.set(id, newProgram);
+    return newProgram;
   }
 }
 
