@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { Link } from "wouter";
-import { BookOpen, Moon, Sun } from "lucide-react";
+import { BookOpen, Moon, Sun, Menu, X } from "lucide-react";
 import { FloatingWhatsApp } from "../FloatingWhatsApp";
 
 interface AppLayoutProps {
@@ -10,6 +10,12 @@ interface AppLayoutProps {
 }
 
 export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleMobileNavClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen flex flex-col relative font-sans">
       {/* Header */}
@@ -34,7 +40,7 @@ export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
               </Link>
               <a 
                 href="#programs" 
-                className="font-semibold text-foreground/80 hover:text-primary transition-colors text-lg"
+                className="font-semibold text-foreground/80 hover:text-primary transition-colors text-lg smooth-scroll"
               >
                 البرامج
               </a>
@@ -59,20 +65,64 @@ export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
               </button>
             </nav>
 
-            {/* Mobile theme toggle */}
-            <button 
-              onClick={onToggleTheme}
-              className="md:hidden p-2.5 rounded-lg bg-muted text-foreground hover:bg-muted/80 transition-colors"
-              aria-label="تبديل المظهر"
-            >
-              {theme === "light" ? (
-                <Moon className="w-5 h-5" />
-              ) : (
-                <Sun className="w-5 h-5" />
-              )}
-            </button>
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center gap-2">
+              <button 
+                onClick={onToggleTheme}
+                className="p-2.5 rounded-lg bg-muted text-foreground hover:bg-muted/80 transition-colors"
+                aria-label="تبديل المظهر"
+              >
+                {theme === "light" ? (
+                  <Moon className="w-5 h-5" />
+                ) : (
+                  <Sun className="w-5 h-5" />
+                )}
+              </button>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2.5 rounded-lg bg-muted text-foreground hover:bg-muted/80 transition-colors"
+                aria-label="القائمة"
+              >
+                {mobileMenuOpen ? (
+                  <X className="w-5 h-5" />
+                ) : (
+                  <Menu className="w-5 h-5" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-sm">
+            <div className="px-4 py-4 space-y-2">
+              <Link 
+                href="/"
+                onClick={handleMobileNavClick}
+                className="block px-4 py-3 rounded-lg font-semibold text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all text-lg"
+              >
+                الرئيسية
+              </Link>
+              <a 
+                href="#programs"
+                onClick={handleMobileNavClick}
+                className="block px-4 py-3 rounded-lg font-semibold text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all text-lg smooth-scroll"
+              >
+                البرامج
+              </a>
+              <a 
+                href="https://wa.me/201091044501"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleMobileNavClick}
+                className="block px-4 py-3 rounded-lg font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-all text-lg text-center"
+              >
+                تواصل معنا
+              </a>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Main Content */}

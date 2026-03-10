@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { MessageCircle, CheckCircle2, AlertCircle, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 import { useProgram } from "@/hooks/use-programs";
+import featuresImage from "@assets/image_1773155918361.png";
 
 export default function ProgramDetails() {
   const [, params] = useRoute("/program/:id");
@@ -104,6 +105,29 @@ export default function ProgramDetails() {
               alt={program.title}
               className="w-full rounded-lg sm:rounded-2xl shadow-lg shadow-black/10 object-cover max-h-64 sm:max-h-80 md:max-h-96"
             />
+          </div>
+
+          {/* Features Section with Image */}
+          <div className="my-12 sm:my-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 sm:p-10 rounded-2xl border border-primary/20"
+            >
+              <img 
+                src={featuresImage}
+                alt="مميزات البرنامج"
+                className="w-full rounded-lg mb-6 sm:mb-8"
+              />
+              <div className="prose prose-sm sm:prose md:prose-lg rtl:prose-reverse max-w-none">
+                <h3 className="text-xl sm:text-2xl font-bold text-primary mb-4">مميزات البرنامج</h3>
+                <div className="whitespace-pre-wrap font-medium leading-relaxed text-foreground/90 text-sm sm:text-base">
+                  {program.features}
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           {/* CTA Button */}

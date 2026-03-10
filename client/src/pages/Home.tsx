@@ -3,7 +3,6 @@ import { Link, useLocation } from "wouter";
 import { ArrowLeft, BookOpen, ChevronLeft } from "lucide-react";
 import { usePrograms } from "@/hooks/use-programs";
 import aboutImage from "@assets/image_1773154454353.png";
-import logoImage from "@assets/image_1773154712025.png";
 
 export default function Home() {
   const { data: programs, isLoading } = usePrograms();
@@ -62,25 +61,6 @@ export default function Home() {
             </motion.div>
 
           </div>
-        </div>
-      </section>
-
-      {/* Logo Section */}
-      <section className="py-12 sm:py-16 bg-background px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="w-full max-w-7xl mx-auto flex justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-xl shadow-primary/20 ring-4 ring-primary/20"
-          >
-            <img 
-              src={logoImage}
-              alt="مقرأة الهدى والنور" 
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
         </div>
       </section>
 
