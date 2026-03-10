@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
 import { ArrowLeft, BookOpen, ChevronLeft } from "lucide-react";
 import { usePrograms } from "@/hooks/use-programs";
+import aboutImage from "@assets/image_1773154454353.png";
+import heroImage from "@assets/image_1773154442884.png";
 
 export default function Home() {
   const { data: programs, isLoading } = usePrograms();
@@ -59,29 +61,6 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Hero Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="relative hidden lg:block order-1 lg:order-2"
-            >
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl shadow-primary/20 aspect-square border-4 sm:border-8 border-white dark:border-card">
-                {/* Landing page hero open Quran */}
-                <img 
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 1200'%3E%3Crect fill='%23ddd' width='1200' height='1200'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='%23999' text-anchor='middle' dy='.3em'%3EQuran Image%3C/text%3E%3C/svg%3E"
-                  alt="Quran" 
-                  className="w-full h-full object-cover bg-muted"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-              </div>
-              
-              {/* Floating Badge */}
-              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white dark:bg-card p-4 sm:p-6 rounded-lg sm:rounded-2xl shadow-lg sm:shadow-xl border border-border">
-                <div className="text-2xl sm:text-3xl font-black text-secondary mb-1">+1000</div>
-                <div className="text-foreground font-bold text-sm sm:text-base">طالب وطالبة</div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -100,9 +79,9 @@ export default function Home() {
             >
               <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-2xl">
                 <img 
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Crect fill='%23ddd' width='600' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='36' fill='%23999' text-anchor='middle' dy='.3em'%3EAbout Image%3C/text%3E%3C/svg%3E"
+                  src={aboutImage}
                   alt="عن مقرأة الهدى والنور" 
-                  className="w-full h-auto bg-muted"
+                  className="w-full h-auto"
                 />
               </div>
             </motion.div>
@@ -203,7 +182,7 @@ export default function Home() {
                     <div className="relative h-40 sm:h-48 overflow-hidden bg-muted">
                       {/* Program thumbnail */}
                       <img 
-                        src={program.imageUrl || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23ddd' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23999' text-anchor='middle' dy='.3em'%3EProgram Image%3C/text%3E%3C/svg%3E"} 
+                        src={program.imageUrl} 
                         alt={program.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />

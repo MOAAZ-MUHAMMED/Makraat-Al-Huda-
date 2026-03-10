@@ -43,14 +43,14 @@ export default function ProgramDetails() {
   const whatsappMessage = encodeURIComponent(`السلام عليكم، أرغب في التسجيل أو الاستفسار عن: ${program.title}`);
   const whatsappUrl = `https://wa.me/201091044501?text=${whatsappMessage}`;
 
-  const imageSrc = program.imageUrl || "https://images.unsplash.com/photo-1590076215667-87ebff3b3e2b?w=1600&q=80";
+  const imageSrc = program.imageUrl;
 
   return (
     <div className="w-full bg-background pb-16 sm:pb-24">
       {/* Program Hero Image */}
       <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96">
         <img 
-          src={imageSrc || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 600'%3E%3Crect fill='%23ddd' width='1600' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='%23999' text-anchor='middle' dy='.3em'%3EProgram Hero Image%3C/text%3E%3C/svg%3E"} 
+          src={imageSrc} 
           alt={program.title} 
           className="w-full h-full object-cover"
         />
@@ -100,7 +100,7 @@ export default function ProgramDetails() {
           {/* Details Image */}
           <div className="my-8 sm:my-12">
             <img 
-              src={imageSrc || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23ddd' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='36' fill='%23999' text-anchor='middle' dy='.3em'%3EDetails Image%3C/text%3E%3C/svg%3E"}
+              src={imageSrc}
               alt={program.title}
               className="w-full rounded-lg sm:rounded-2xl shadow-lg shadow-black/10 object-cover max-h-64 sm:max-h-80 md:max-h-96"
             />

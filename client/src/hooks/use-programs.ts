@@ -1,32 +1,36 @@
 import { useQuery } from "@tanstack/react-query";
+import tajweedImage from "@assets/image_1773154400348.png";
+import quranImage from "@assets/image_1773154442884.png";
+import childrenImage from "@assets/image_1773154414478.png";
+import kidsImage from "@assets/image_1773154464123.png";
 
 const PROGRAMS = [
   {
     id: 1,
     title: "تعليم القراءة الصحيحة والتجويد",
     description: "برنامج تعليم القراءة الصحيحة والتجويد للناطقين باللغة العربية وغير الناطقين.",
-    imageUrl: "https://images.unsplash.com/photo-1601142634808-38923eb7c560?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    imageUrl: tajweedImage,
     details: "يهدف هذا البرنامج إلى تعليم أساسيات القراءة الصحيحة للقرآن الكريم مع تطبيق أحكام التجويد بشكل عملي ونظري، مناسب للناطقين بالعربية ولغير الناطقين بها من خلال مناهج متخصصة."
   },
   {
     id: 2,
     title: "تحفيظ القرآن الكريم",
     description: "برنامج تحفيظ القرآن الكريم لكل الأعمار (نساء ورجال).",
-    imageUrl: "https://images.unsplash.com/photo-1584622181563-430f63602d4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    imageUrl: quranImage,
     details: "برنامج متكامل لحفظ القرآن الكريم والمراجعة المستمرة، متاح لجميع الأعمار من الرجال والنساء بمستويات مختلفة تناسب قدرة كل مشارك."
   },
   {
     id: 3,
     title: "تعليم القراءة والكتابة للأطفال",
     description: "برنامج مخصص لتعليم الأطفال القراءة والكتابة بأسلوب شيق وممتع.",
-    imageUrl: "https://images.unsplash.com/photo-1456496387997-a736f34e92da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    imageUrl: childrenImage,
     details: "تأسيس الأطفال في القراءة والكتابة باللغة العربية بطريقة القاعدة النورانية أو البغدادية لتأهيلهم لقراءة القرآن الكريم بشكل صحيح وسهل."
   },
   {
     id: 4,
     title: "مقرر رياض الأطفال والابتدائي",
     description: "برنامج شامل لمقرر رياض الأطفال والصف الأول والثاني الابتدائي.",
-    imageUrl: "https://images.unsplash.com/photo-1598305182392-18a2f8dd9c65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    imageUrl: kidsImage,
     details: "دعم تعليمي وتأسيس شامل لمقررات رياض الأطفال والصفوف الأولى من المرحلة الابتدائية لضمان تفوق الطالب في دراسته."
   }
 ];
