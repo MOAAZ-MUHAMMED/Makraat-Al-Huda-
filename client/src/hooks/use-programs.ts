@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import tajweedImage from "@assets/image_1773154400348.png";
-import quranImage from "@assets/image_1773154442884.png";
+import quranTeachingImage from "@assets/image_1773154687691.png";
 import childrenImage from "@assets/image_1773154414478.png";
 import kidsImage from "@assets/image_1773154464123.png";
 
@@ -16,7 +16,7 @@ const PROGRAMS = [
     id: 2,
     title: "تحفيظ القرآن الكريم",
     description: "برنامج تحفيظ القرآن الكريم لكل الأعمار (نساء ورجال).",
-    imageUrl: quranImage,
+    imageUrl: quranTeachingImage,
     details: "برنامج متكامل لحفظ القرآن الكريم والمراجعة المستمرة، متاح لجميع الأعمار من الرجال والنساء بمستويات مختلفة تناسب قدرة كل مشارك."
   },
   {
