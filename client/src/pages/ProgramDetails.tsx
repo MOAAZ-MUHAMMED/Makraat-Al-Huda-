@@ -1,10 +1,17 @@
 import { useEffect } from "react";
 import { useRoute } from "wouter";
 import { motion } from "framer-motion";
-import { MessageCircle, CheckCircle2, AlertCircle, ChevronRight } from "lucide-react";
+import { MessageCircle, CheckCircle2, AlertCircle, ChevronRight, BookOpen, Users, Award, Zap } from "lucide-react";
 import { Link } from "wouter";
 import { useProgram } from "@/hooks/use-programs";
 import featuresImage from "@assets/image_1773155918361.png";
+
+const FEATURE_ICONS: Record<number, React.ComponentType<{ className: string }>> = {
+  0: BookOpen,
+  1: Users,
+  2: Award,
+  3: Zap,
+};
 
 export default function ProgramDetails() {
   const [, params] = useRoute("/program/:id");
@@ -118,24 +125,25 @@ export default function ProgramDetails() {
               >
                 <h3 className="text-xl sm:text-2xl font-bold text-primary mb-6 sm:mb-8">مميزات البرنامج</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                  {program.featureBoxes.map((box, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-2xl border border-primary/20 hover:shadow-lg hover:border-primary/40 transition-all duration-300"
-                    >
-                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/40 flex items-center justify-center">
-                          <span className="text-primary font-black text-lg">{index + 1}</span>
+                  {program.featureBoxes.map((box, index) => {
+                    const IconComponent = FEATURE_ICONS[index % 4];
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-2xl border border-primary/20 hover:shadow-lg hover:border-primary/40 transition-all duration-300"
+                      >
+                        <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                          <IconComponent className="w-6 h-6 text-primary" />
                         </div>
-                      </div>
-                      <h4 className="text-lg sm:text-xl font-bold text-foreground mb-2">{box.title}</h4>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{box.description}</p>
-                    </motion.div>
-                  ))}
+                        <h4 className="text-lg sm:text-xl font-bold text-foreground mb-2">{box.title}</h4>
+                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{box.description}</p>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </motion.div>
             </div>

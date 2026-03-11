@@ -144,13 +144,13 @@ export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-12 mt-16 rounded-t-[3rem] dark:bg-foreground dark:text-background">
+      <footer className="bg-foreground text-background py-12 mt-16 rounded-t-[3rem]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-right">
           <div className="flex items-center gap-3">
-            <BookOpen className="w-8 h-8 text-secondary dark:text-secondary" />
-            <span className="text-2xl font-bold text-white dark:text-white">مقرأة الهدى والنور</span>
+            <BookOpen className="w-8 h-8 text-secondary" />
+            <span className="text-2xl font-bold text-white">مقرأة الهدى والنور</span>
           </div>
-          <p className="text-background/70 dark:text-background/70 font-medium text-lg">
+          <p className="text-white/80 font-medium text-lg">
             جميع الحقوق محفوظة &copy; {new Date().getFullYear()}
           </p>
         </div>

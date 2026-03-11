@@ -3,7 +3,7 @@ import tajweedImage from "@assets/image_1773154400348.png";
 import quranTeachingImage from "@assets/image_1773154687691.png";
 import childrenImage from "@assets/image_1773154414478.png";
 import kidsImage from "@assets/image_1773154464123.png";
-import mosqueImage from "@assets/image_1773189950938.png";
+import mosqueImage from "@assets/image_1773190973462.png";
 
 const PROGRAMS = [
   {
@@ -32,7 +32,7 @@ const PROGRAMS = [
     id: 2,
     title: "تحفيظ القرآن الكريم",
     description: "برنامج تحفيظ القرآن الكريم لكل الأعمار (نساء ورجال).",
-    imageUrl: quranTeachingImage,
+    imageUrl: mosqueImage,
     detailsImage: mosqueImage,
     details: "برنامج متكامل لحفظ القرآن الكريم والمراجعة المستمرة، متاح لجميع الأعمار من الرجال والنساء بمستويات مختلفة تناسب قدرة كل مشارك.",
     featureBoxes: [
