@@ -32,8 +32,8 @@ const PROGRAMS = [
     id: 2,
     title: "تحفيظ القرآن الكريم",
     description: "برنامج تحفيظ القرآن الكريم لكل الأعمار (نساء ورجال).",
-    imageUrl: mosqueImage,
-    detailsImage: mosqueImage,
+    imageUrl: quranTeachingImage,
+    detailsImage: "@assets/image_1773191742701.png",
     details: "برنامج متكامل لحفظ القرآن الكريم والمراجعة المستمرة، متاح لجميع الأعمار من الرجال والنساء بمستويات مختلفة تناسب قدرة كل مشارك.",
     featureBoxes: [
       {

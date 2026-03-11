@@ -52,6 +52,13 @@ export default function ProgramDetails() {
   const whatsappUrl = `https://wa.me/201091044501?text=${whatsappMessage}`;
 
   const imageSrc = program.imageUrl;
+  
+  // Handle detailsImage which might be a URL string or imported image
+  const detailsImageSrc = typeof program.detailsImage === 'string' 
+    ? program.detailsImage.startsWith('@assets/') 
+      ? program.detailsImage.replace('@assets/', '/assets/')
+      : program.detailsImage
+    : program.detailsImage;
 
   return (
     <div className="w-full bg-background pb-16 sm:pb-24">
@@ -108,7 +115,7 @@ export default function ProgramDetails() {
           {/* Details Image */}
           <div className="my-8 sm:my-12">
             <img 
-              src={imageSrc}
+              src={detailsImageSrc}
               alt={program.title}
               className="w-full rounded-lg sm:rounded-2xl shadow-lg shadow-black/10 object-cover max-h-64 sm:max-h-80 md:max-h-96"
             />
