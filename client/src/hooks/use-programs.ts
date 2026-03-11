@@ -3,6 +3,7 @@ import tajweedImage from "@assets/image_1773154400348.png";
 import quranTeachingImage from "@assets/image_1773154687691.png";
 import childrenImage from "@assets/image_1773154414478.png";
 import kidsImage from "@assets/image_1773154464123.png";
+import mosqueImage from "@assets/image_1773189950938.png";
 
 const PROGRAMS = [
   {
@@ -12,16 +13,42 @@ const PROGRAMS = [
     imageUrl: tajweedImage,
     detailsImage: quranTeachingImage,
     details: "يهدف هذا البرنامج إلى تعليم أساسيات القراءة الصحيحة للقرآن الكريم مع تطبيق أحكام التجويد بشكل عملي ونظري، مناسب للناطقين بالعربية ولغير الناطقين بها من خلال مناهج متخصصة.",
-    features: "تعليم التجويد\nأحكام القراءة\nتصحيح النطق"
+    featureBoxes: [
+      {
+        title: "تعليم التجويد",
+        description: "شرح مفصل لأحكام التجويد وتطبيقها عملياً"
+      },
+      {
+        title: "أحكام القراءة",
+        description: "تصحيح الأخطاء الشائعة في تلاوة القرآن"
+      },
+      {
+        title: "تصحيح النطق",
+        description: "مخارج الحروف والنطق الصحيح لكل حرف"
+      }
+    ]
   },
   {
     id: 2,
     title: "تحفيظ القرآن الكريم",
     description: "برنامج تحفيظ القرآن الكريم لكل الأعمار (نساء ورجال).",
     imageUrl: quranTeachingImage,
-    detailsImage: quranTeachingImage,
+    detailsImage: mosqueImage,
     details: "برنامج متكامل لحفظ القرآن الكريم والمراجعة المستمرة، متاح لجميع الأعمار من الرجال والنساء بمستويات مختلفة تناسب قدرة كل مشارك.",
-    features: "حفظ القرآن\nالمراجعة المستمرة\nالتقييم المنتظم"
+    featureBoxes: [
+      {
+        title: "حفظ القرآن",
+        description: "برنامج منظم لحفظ القرآن الكريم كاملاً"
+      },
+      {
+        title: "المراجعة المستمرة",
+        description: "جلسات مراجعة دورية للحفاظ على الحفظ"
+      },
+      {
+        title: "التقييم المنتظم",
+        description: "تقييم مستمر لتقدم الطالب والمتابعة الدقيقة"
+      }
+    ]
   },
   {
     id: 3,
@@ -30,7 +57,20 @@ const PROGRAMS = [
     imageUrl: childrenImage,
     detailsImage: quranTeachingImage,
     details: "تأسيس الأطفال في القراءة والكتابة باللغة العربية بطريقة القاعدة النورانية أو البغدادية لتأهيلهم لقراءة القرآن الكريم بشكل صحيح وسهل.",
-    features: "القاعدة النورانية\nكتابة الحروف\nالمشاركة والتفاعل"
+    featureBoxes: [
+      {
+        title: "القاعدة النورانية",
+        description: "طريقة تعليمية فعالة لتعلم قراءة القرآن بسهولة"
+      },
+      {
+        title: "كتابة الحروف",
+        description: "تعلم كتابة الحروف العربية بشكل صحيح"
+      },
+      {
+        title: "التفاعل والمشاركة",
+        description: "أنشطة تفاعلية وممتعة تشجع التعلم"
+      }
+    ]
   },
   {
     id: 4,
@@ -39,7 +79,20 @@ const PROGRAMS = [
     imageUrl: kidsImage,
     detailsImage: quranTeachingImage,
     details: "دعم تعليمي وتأسيس شامل لمقررات رياض الأطفال والصفوف الأولى من المرحلة الابتدائية لضمان تفوق الطالب في دراسته.",
-    features: "الرياضيات\nاللغة العربية\nالعلوم"
+    featureBoxes: [
+      {
+        title: "اللغة العربية",
+        description: "تعليم القراءة والكتابة والقواعد النحوية"
+      },
+      {
+        title: "الرياضيات",
+        description: "أساسيات العمليات الحسابية والأرقام"
+      },
+      {
+        title: "العلوم",
+        description: "مقدمة شاملة للعلوم الطبيعية والاجتماعية"
+      }
+    ]
   }
 ];
 

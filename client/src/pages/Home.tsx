@@ -65,7 +65,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-secondary/10 to-primary/5 px-3 sm:px-4 md:px-6 lg:px-8">
+      <section id="about" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-secondary/10 to-primary/5 px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* About Image */}

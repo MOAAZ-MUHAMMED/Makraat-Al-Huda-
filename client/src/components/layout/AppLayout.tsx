@@ -39,10 +39,16 @@ export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
                 الرئيسية
               </Link>
               <a 
-                href="#programs" 
+                href="/#programs" 
                 className="font-semibold text-foreground/80 hover:text-primary transition-colors text-lg smooth-scroll"
               >
                 البرامج
+              </a>
+              <a 
+                href="/#about" 
+                className="font-semibold text-foreground/80 hover:text-primary transition-colors text-lg smooth-scroll"
+              >
+                عن المقرأة
               </a>
               <a 
                 href="https://wa.me/201091044501" 
@@ -66,7 +72,7 @@ export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
             </nav>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center gap-2">
+            <div className="md:hidden flex items-center gap-1">
               <button 
                 onClick={onToggleTheme}
                 className="p-2.5 rounded-lg bg-muted text-foreground hover:bg-muted/80 transition-colors"
@@ -105,11 +111,18 @@ export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
                 الرئيسية
               </Link>
               <a 
-                href="#programs"
+                href="/#programs"
                 onClick={handleMobileNavClick}
                 className="block px-4 py-3 rounded-lg font-semibold text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all text-lg smooth-scroll"
               >
                 البرامج
+              </a>
+              <a 
+                href="/#about"
+                onClick={handleMobileNavClick}
+                className="block px-4 py-3 rounded-lg font-semibold text-foreground/80 hover:text-primary hover:bg-primary/10 transition-all text-lg smooth-scroll"
+              >
+                عن المقرأة
               </a>
               <a 
                 href="https://wa.me/201091044501"
@@ -131,13 +144,13 @@ export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-12 mt-16 rounded-t-[3rem]">
+      <footer className="bg-foreground text-background py-12 mt-16 rounded-t-[3rem] dark:bg-foreground dark:text-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-right">
           <div className="flex items-center gap-3">
-            <BookOpen className="w-8 h-8 text-secondary" />
-            <span className="text-2xl font-bold text-white">مقرأة الهدى والنور</span>
+            <BookOpen className="w-8 h-8 text-secondary dark:text-secondary" />
+            <span className="text-2xl font-bold text-white dark:text-white">مقرأة الهدى والنور</span>
           </div>
-          <p className="text-background/70 font-medium text-lg">
+          <p className="text-background/70 dark:text-background/70 font-medium text-lg">
             جميع الحقوق محفوظة &copy; {new Date().getFullYear()}
           </p>
         </div>
