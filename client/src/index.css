@@ -99,3 +99,12 @@
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-l from-primary to-secondary;
 }
+
+/* Logo blend — transparent white bg on light, inverted on dark */
+.logo-blend {
+  mix-blend-mode: multiply;
+}
+.dark .logo-blend {
+  mix-blend-mode: normal;
+  filter: invert(1) hue-rotate(180deg);
+}

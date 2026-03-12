@@ -37,8 +37,7 @@ export default function Home() {
               <img
                 src={logoImage}
                 alt="شعار مقرأة الهدى والنور"
-                className="w-full max-w-sm xl:max-w-md"
-                style={{ mixBlendMode: "multiply" }}
+                className="logo-blend w-full max-w-sm xl:max-w-md"
               />
             </div>
 
@@ -84,8 +83,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="w-40 sm:w-52 md:w-64"
-          style={{ mixBlendMode: "multiply" }}
+          className="logo-blend w-40 sm:w-52 md:w-64"
         />
       </div>
 
