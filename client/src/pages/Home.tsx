@@ -33,19 +33,14 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             
             {/* Hero Logo — fills the left column on desktop */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-              className="hidden lg:flex items-center justify-center order-1 lg:order-2"
-              style={{ mixBlendMode: "multiply" }}
-            >
+            <div className="hidden lg:flex items-center justify-center order-1 lg:order-2">
               <img
                 src={logoImage}
                 alt="شعار مقرأة الهدى والنور"
                 className="w-full max-w-sm xl:max-w-md"
+                style={{ mixBlendMode: "multiply" }}
               />
-            </motion.div>
+            </div>
 
             {/* Hero Text */}
             <motion.div 
