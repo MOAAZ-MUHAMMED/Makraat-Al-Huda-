@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative overflow-hidden w-full bg-primary/5 min-h-screen sm:min-h-[85vh] flex items-center py-12 sm:py-16">
+      <section className="relative overflow-hidden w-full bg-primary/5 min-h-[60vh] sm:min-h-[85vh] flex items-center pt-4 pb-12 sm:py-16">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/2 sm:translate-x-1/4 w-[300px] sm:w-[800px] h-[300px] sm:h-[800px] rounded-full bg-secondary/10 blur-3xl -z-10"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/2 sm:-translate-x-1/4 w-[250px] sm:w-[600px] h-[250px] sm:h-[600px] rounded-full bg-primary/10 blur-3xl -z-10"></div>
