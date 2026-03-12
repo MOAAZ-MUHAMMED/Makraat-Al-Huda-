@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { ArrowLeft, BookOpen, ChevronLeft } from "lucide-react";
 import { usePrograms } from "@/hooks/use-programs";
 import aboutImage from "@assets/image_1773154454353.png";
+import logoImage from "@assets/image_1773327345465.png";
 
 export default function Home() {
   const { data: programs, isLoading } = usePrograms();
@@ -31,6 +32,20 @@ export default function Home() {
         <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             
+            {/* Hero Logo — fills the left column on desktop */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
+              className="hidden lg:flex items-center justify-center order-1 lg:order-2"
+            >
+              <img
+                src={logoImage}
+                alt="شعار مقرأة الهدى والنور"
+                className="w-full max-w-sm xl:max-w-md drop-shadow-2xl"
+              />
+            </motion.div>
+
             {/* Hero Text */}
             <motion.div 
               initial={{ opacity: 0, x: 50 }}
@@ -64,8 +79,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Logo Divider — before About Section */}
+      <div className="flex justify-center py-10 sm:py-14 bg-gradient-to-b from-background to-secondary/10">
+        <motion.img
+          src={logoImage}
+          alt="شعار مقرأة الهدى والنور"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="w-40 sm:w-52 md:w-64 drop-shadow-xl"
+        />
+      </div>
+
       {/* About Section */}
-      <section id="about" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-secondary/10 to-primary/5 px-3 sm:px-4 md:px-6 lg:px-8">
+      <section id="about" className="py-10 sm:py-14 lg:py-20 bg-gradient-to-b from-secondary/10 to-primary/5 px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* About Image */}
