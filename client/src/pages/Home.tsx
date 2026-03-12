@@ -38,12 +38,12 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
               className="hidden lg:flex items-center justify-center order-1 lg:order-2"
+              style={{ mixBlendMode: "multiply" }}
             >
               <img
                 src={logoImage}
                 alt="شعار مقرأة الهدى والنور"
                 className="w-full max-w-sm xl:max-w-md"
-                style={{ mixBlendMode: "multiply" }}
               />
             </motion.div>
 
