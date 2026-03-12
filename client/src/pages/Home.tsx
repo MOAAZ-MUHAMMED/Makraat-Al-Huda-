@@ -29,7 +29,7 @@ export default function Home() {
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[400px] sm:w-[800px] h-[400px] sm:h-[800px] rounded-full bg-secondary/10 blur-3xl -z-10"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full bg-primary/10 blur-3xl -z-10"></div>
         
-        <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 z-10">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             
             {/* Hero Logo — fills the left column on desktop */}
