@@ -17,7 +17,7 @@ export function AppLayout({ children, theme, onToggleTheme }: AppLayoutProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col relative font-sans">
+    <div className="min-h-screen flex flex-col relative font-sans w-full overflow-x-hidden">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full glass border-b border-border/50 will-change-transform">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
