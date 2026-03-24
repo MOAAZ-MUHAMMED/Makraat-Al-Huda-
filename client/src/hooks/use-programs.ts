@@ -13,7 +13,7 @@ const PROGRAMS = [
     title: "تعليم القراءة الصحيحة والتجويد",
     description: "برنامج تعليم القراءة الصحيحة والتجويد للناطقين باللغة العربية وغير الناطقين.",
     imageUrl: tajweedImage,
-    detailsImage: quranTeachingImage,
+    detailsImage: tajweedImage,
     details: "يهدف هذا البرنامج إلى تعليم أساسيات القراءة الصحيحة للقرآن الكريم مع تطبيق أحكام التجويد بشكل عملي ونظري، مناسب للناطقين بالعربية ولغير الناطقين بها من خلال مناهج متخصصة.",
     featureBoxes: [
       {
@@ -79,7 +79,7 @@ const PROGRAMS = [
     title: "مقرر رياض الأطفال والابتدائي",
     description: "برنامج شامل لمقرر رياض الأطفال والصف الأول والثاني الابتدائي.",
     imageUrl: kidsImage,
-    detailsImage: quranTeachingImage,
+    detailsImage: kidsImage,
     details: "دعم تعليمي وتأسيس شامل لمقررات رياض الأطفال والصفوف الأولى من المرحلة الابتدائية لضمان تفوق الطالب في دراسته.",
     featureBoxes: [
       {
