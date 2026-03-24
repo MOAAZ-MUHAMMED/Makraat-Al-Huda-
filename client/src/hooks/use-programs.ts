@@ -5,6 +5,7 @@ import childrenImage from "@assets/image_1773154414478.png";
 import kidsImage from "@assets/image_1773154464123.png";
 import mosqueImage from "@assets/image_1773190973462.png";
 import quranMosqueImage from "@assets/image_1773327118660.png";
+import kImage from "@assets/k.jpg";
 
 const PROGRAMS = [
   {
@@ -56,7 +57,7 @@ const PROGRAMS = [
     title: "تعليم القراءة والكتابة للأطفال",
     description: "برنامج مخصص لتعليم الأطفال القراءة والكتابة بأسلوب شيق وممتع.",
     imageUrl: childrenImage,
-    detailsImage: quranTeachingImage,
+    detailsImage: kImage,
     details: "تأسيس الأطفال في القراءة والكتابة باللغة العربية بطريقة القاعدة النورانية أو البغدادية لتأهيلهم لقراءة القرآن الكريم بشكل صحيح وسهل.",
     featureBoxes: [
       {
